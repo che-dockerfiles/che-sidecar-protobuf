@@ -16,7 +16,7 @@ ENV PROTOC_VERSION=3.11.2
 RUN apt-get update && \
     apt-get install wget gnupg unzip -y && \
     apt-get update && \
-    apt-get install nodejs clangd-8 clang-8 clang-format-8 gdb -y && \
+    apt-get install clangd-8 clang-8 clang-format-8 gdb -y && \
     apt-get clean && apt-get -y autoremove && rm -rf /var/lib/apt/lists/* && \
     update-alternatives --install /usr/bin/clang clang /usr/bin/clang-8 100 && \
     update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-8 100 && \
