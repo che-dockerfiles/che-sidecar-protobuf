@@ -15,9 +15,6 @@ ENV PROTOC_VERSION=3.11.2
 
 RUN apt-get update && \
     apt-get install wget gnupg unzip -y && \
-    echo 'deb http://apt.llvm.org/buster/ llvm-toolchain-buster-8 main' >> /etc/apt/sources.list && \
-    wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
-    wget -O - https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get update && \
     apt-get install nodejs clangd-8 clang-8 clang-format-8 gdb -y && \
     apt-get clean && apt-get -y autoremove && rm -rf /var/lib/apt/lists/* && \
