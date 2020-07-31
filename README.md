@@ -1,4 +1,4 @@
-# che-sidecar-bazel
+# che-sidecar-protobuf
 Eclipse Che Sidecar container for Protobuf
 
 This sidecar image is used to run Che Plug-ins in dedicated containers
