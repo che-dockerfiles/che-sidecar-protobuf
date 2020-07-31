@@ -13,10 +13,11 @@ FROM debian:10-slim
 ENV HOME=/home/theia
 ENV PROTOC_VERSION=3.11.2
 
-RUN apt-get update && \
+RUN echo "deb http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list && \
+    apt-get update && \
     apt-get install wget gnupg unzip -y && \
     apt-get update && \
-    apt-get install clangd-8 clang-8 clang-format-8 gdb -y && \
+    apt-get install -t buster-backports clangd-8 clang-8 clang-format-8 gdb -y && \
     apt-get clean && apt-get -y autoremove && rm -rf /var/lib/apt/lists/* && \
     update-alternatives --install /usr/bin/clang clang /usr/bin/clang-8 100 && \
     update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-8 100 && \
