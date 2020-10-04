@@ -25,6 +25,4 @@ if [ "${USER_ID}" -ne 0 ] && command -v sudo >/dev/null 2>&1 && sudo -n true > /
     sudo chown "${USER_ID}:${GROUP_ID}" /projects
 fi
 
-chown -R user:root /home/theia /opt 
-
 exec "$@"
